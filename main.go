@@ -38,10 +38,8 @@ func itemPost(w http.ResponseWriter, r *http.Request) {
 		err := super.Post(item, value)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
-			//fmt.Fprintf(w, "Item already present")
 		} else {
 			fmt.Fprintf(w, "Item entered successfully")
-			//fmt.Fprintln(w, super.Print())
 		}
 	}
 }
@@ -56,10 +54,8 @@ func itemUpdate(w http.ResponseWriter, r *http.Request) {
 		err := super.Put(item, value)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
-			//fmt.Fprintf(w, "Item already present")
 		} else {
 			fmt.Fprintf(w, "Item updated successfully")
-			//fmt.Fprintln(w, super.Print())
 		}
 	}
 }
@@ -74,10 +70,9 @@ func itemGet(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 	} else {
 		fmt.Fprintln(w, val)
-		//fmt.Fprintln(w, super.Print())
 	}
 }
-func itemGet(w http.ResponseWriter, r *http.Request) {
+func itemDelete(w http.ResponseWriter, r *http.Request) {
 	name := mux.Vars(r)["item"]
 	err := super.Delete(name)
 	if err != nil {
