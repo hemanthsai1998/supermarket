@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	super "supermarket/market"
+	super "github.com/hemanthsai1998/supermarket/market"
 
 	"github.com/gorilla/mux"
 )
