@@ -20,7 +20,7 @@ func main() {
 	router.HandleFunc("/super_market/{item}", itemGet).Methods("GET")
 	router.HandleFunc("/super_market", itemUpdate).Methods("PUT")
 	router.HandleFunc("/super_market/{item}", itemDelete).Methods("DELETE")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":9095", router))
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
